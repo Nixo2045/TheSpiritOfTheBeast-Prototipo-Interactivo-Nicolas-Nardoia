@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dbmxrsrnj7j0o"]
+
+[ext_resource type="Script" uid="uid://btby6e1rs2ime" path="res://Scripts/Keybindings.gd" id="1_hebd3"]
+[ext_resource type="FontFile" uid="uid://b21mmhdcd41vw" path="res://Assets/Fonts/PressStart2P.ttf" id="1_p6n3u"]
+
+[sub_resource type="Theme" id="Theme_6ac5s"]
+default_font = ExtResource("1_p6n3u")
+
+[node name="Keybindings" type="Button" unique_id=998122864]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("1_hebd3")

@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://bej16yl2jgo5x"]
+
+[ext_resource type="Script" uid="uid://dxde8frrraf08" path="res://Scripts/Key_reassignment.gd" id="1_isa0e"]
+[ext_resource type="Texture2D" uid="uid://dubdv5mt55eer" path="res://Assets/Rocky Roads/Backgrounds/desert_c.png" id="2_6ac5s"]
+[ext_resource type="FontFile" uid="uid://b21mmhdcd41vw" path="res://Assets/Fonts/PressStart2P.ttf" id="3_v4clx"]
+[ext_resource type="Script" uid="uid://btby6e1rs2ime" path="res://Scripts/Keybindings.gd" id="4_6ac5s"]
+[ext_resource type="Texture2D" uid="uid://3btll2u3b1sf" path="res://Assets/Rocky Roads/Deco/tree.png" id="5_v4clx"]
+
+[sub_resource type="Theme" id="Theme_n83n4"]
+default_font = ExtResource("3_v4clx")
+default_font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ac5s"]
+font = ExtResource("3_v4clx")
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_6ac5s"]
+default_font = ExtResource("3_v4clx")
+
+[sub_resource type="Theme" id="Theme_vne1v"]
+default_font = ExtResource("3_v4clx")
+
+[node name="KeyReassignment" type="Node2D" unique_id=1252608138]
+script = ExtResource("1_isa0e")
+
+[node name="DesertC" type="Sprite2D" parent="." unique_id=1425882950]
+position = Vector2(572, 322.25)
+scale = Vector2(0.6854066, 0.72998875)
+texture = ExtResource("2_6ac5s")
+
+[node name="Label_Key" type="Label" parent="." unique_id=2052041038]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 177.0
+offset_top = 115.0
+offset_right = 977.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n83n4")
+text = "KEY REASSIGNMENT"
+
+[node name="Label_MoveUp" type="Label" parent="." unique_id=1186170407]
+offset_left = 68.0
+offset_top = 244.0
+offset_right = 313.0
+offset_bottom = 279.0
+text = "MOVE UP"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton" type="Button" parent="." unique_id=1324840156]
+offset_left = 148.0
+offset_top = 294.0
+offset_right = 224.0
+offset_bottom = 370.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "move_up"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[node name="Label_MoveDown" type="Label" parent="." unique_id=1028189160]
+offset_left = 29.0
+offset_top = 438.0
+offset_right = 344.0
+offset_bottom = 473.0
+text = "MOVE DOWN"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton2" type="Button" parent="." unique_id=722053555]
+offset_left = 146.0
+offset_top = 501.0
+offset_right = 222.0
+offset_bottom = 577.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "move_down"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[node name="Label_MoveLeft" type="Label" parent="." unique_id=1662048135]
+offset_left = 754.0
+offset_top = 236.0
+offset_right = 1069.0
+offset_bottom = 271.0
+text = "MOVE LEFT"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton3" type="Button" parent="." unique_id=2078865981]
+offset_left = 873.0
+offset_top = 290.0
+offset_right = 949.0
+offset_bottom = 366.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "move_left"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[node name="Label_MoveRight" type="Label" parent="." unique_id=1806041222]
+offset_left = 747.0
+offset_top = 435.0
+offset_right = 1097.0
+offset_bottom = 470.0
+text = "MOVE RIGHT"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton4" type="Button" parent="." unique_id=1926567748]
+offset_left = 873.0
+offset_top = 490.0
+offset_right = 949.0
+offset_bottom = 566.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "move_right"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[node name="BackToMenu" type="Button" parent="." unique_id=438920804]
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 268.0
+offset_bottom = 69.0
+theme = SubResource("Theme_vne1v")
+text = "BACK TO MENU"
+icon = ExtResource("5_v4clx")
+
+[node name="Label_Attack" type="Label" parent="." unique_id=1955366132]
+offset_left = 455.0
+offset_top = 236.0
+offset_right = 666.0
+offset_bottom = 271.0
+text = "ATTACK"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton5" type="Button" parent="." unique_id=847988103]
+offset_left = 518.0
+offset_top = 290.0
+offset_right = 594.0
+offset_bottom = 366.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "attack"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[node name="Label_Run" type="Label" parent="." unique_id=790309761]
+offset_left = 503.0
+offset_top = 436.0
+offset_right = 613.0
+offset_bottom = 471.0
+text = "RUN"
+label_settings = SubResource("LabelSettings_6ac5s")
+
+[node name="InputReMapButton6" type="Button" parent="." unique_id=443403459]
+offset_left = 517.0
+offset_top = 495.0
+offset_right = 593.0
+offset_bottom = 571.0
+theme = SubResource("Theme_6ac5s")
+script = ExtResource("4_6ac5s")
+action = "run_fast"
+action_event_index = 1
+metadata/_custom_type_script = "uid://btby6e1rs2ime"
+
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]

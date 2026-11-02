@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bw46r5kb5uj5g"]
+
+[ext_resource type="Script" uid="uid://bht6ii8w86uxo" path="res://Scripts/Zombie.gd" id="1_432o6"]
+[ext_resource type="Texture2D" uid="uid://dhem0q7bmy2jp" path="res://Assets/ZombiePack_FREE_v1-00/1_Default/Zombie_Default_Walk.png" id="6_jdtiv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ru28"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h15oy"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf4vm"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mntmy"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dktg"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_432o6"]
+atlas = ExtResource("6_jdtiv")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xd07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ru28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h15oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf4vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mntmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dktg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_432o6")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq8tk"]
+size = Vector2(12, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgj7t"]
+size = Vector2(15.5, 22)
+
+[node name="Zombie" type="Node2D" unique_id=243991766]
+script = ExtResource("1_432o6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=386571798]
+sprite_frames = SubResource("SpriteFrames_3xd07")
+animation = &"Walk"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1702142733]
+collision_layer = 4
+collision_mask = 2
+
+[node name="TopZombie" type="CollisionShape2D" parent="Area2D" unique_id=5360030]
+position = Vector2(-1, -13.5)
+shape = SubResource("RectangleShape2D_jq8tk")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1853234813]
+collision_layer = 4
+collision_mask = 2
+
+[node name="BottomZombie" type="CollisionShape2D" parent="Area2D2" unique_id=160375933]
+position = Vector2(-0.75, 5)
+shape = SubResource("RectangleShape2D_fgj7t")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=665348649]
+position = Vector2(-14, -5)
+scale = Vector2(0.6, 0.6)
+target_position = Vector2(20, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
